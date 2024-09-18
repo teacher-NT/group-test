@@ -1,0 +1,1 @@
+print("Qalesiz Ibrohim")
