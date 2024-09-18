@@ -7,5 +7,5 @@
 
 ### Eslatma!
 ```
-Har doim yangi o'zgarishlarni **push** qilishdan avval, **pull** qilishni unutmang!
+Har doim yangi o'zgarishlarni `push` qilishdan avval, `git pull` buyrug'ini yozishni unutmang!
 ```
