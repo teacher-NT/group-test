@@ -1,14 +1,24 @@
-class Person:
-    def __init__(self, n, s, a):
+class Animal:
+    def  __init__(self, n):
         self.name = n
-        self.surname = s
-        self.age = a
+    def eat(self, meal):
+        print(f"Men {meal} yemoqdaman!")
 
-    def salom_ber(self, n):
-        print(f"Salom {n}")
+class Dog(Animal):
+    def __init__(self, n, z, r, y):
+        self.zot = z
+        self.rang = r
+        self.yosh = y
+        super().__init__(n)
+    def eat(self, meal, drink):
+        print(f"{self.name} {meal} yeydi va {drink} ichadi!")
 
-c1 = Person("Ibrohim", "Qo'ldoshev", 18)
-c2 = Person("Diyorbek", "Turdialiyev", 19)
+class Cat(Animal):
+    pass
 
-c1.salom_ber("Abror")
-c2.salom_ber("Shohruh")
+d1 = Dog("Tom", "Chihiahia", "sariq", 5)
+c1 = Cat("Baroq")
+
+d1.eat("go'sht", "cola")
+print(d1.zot, d1.rang, d1.yosh)
+# c1.eat("baliq")
