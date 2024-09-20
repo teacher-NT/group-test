@@ -1,5 +1,5 @@
 # Muhim buyruqlar
-
+- ** cd group-test ** group-test fileiga kirish 
 - **git add .** o'zgarishlarni gitga qo'shish
 - **git commit -m "o'zgarish"** o'zgarishlarni izohlash
 - **git push** o'zgarishlarni globalga jo'natish
