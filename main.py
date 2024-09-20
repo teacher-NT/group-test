@@ -1,60 +1,55 @@
-from abc import ABC, abstractmethod
-
-class Player(ABC):
-    @abstractmethod
-    def run(self):
-        pass
-
-    @abstractmethod
-    def turn(self):
-        pass
-
-class BMW(Player):
-
-    def __init__(self, nom, rang, max_speed):
-        self.name = nom
-        self.color = rang
-        self.max_speed = max_speed
-
-    def run(self):
-        print("Running")
-
-    def turn(self):
-        print("Turn around")
-
-b = BMW("R8", "Qora", 260)
-
-print(b.max_speed)
+"""
+Hackerrank - masala
+"""
+if __name__ == '__main__':
+    n = int(input().strip())
+    if n % 2 == 1:
+        print("Weird")
+    elif n % 2 == 0 and 2 <= n <= 5:
+        print("Not Weird")
+    elif n % 2 == 0 and 6 <= n <= 20:
+        print("Weird")
+    elif n > 20:
+        print("Not Weird")
+        
 
 
+"""
+Abstraktsiya
+"""
+# from abc import ABC, abstractmethod
 
+# class Player(ABC):
+#     @abstractmethod
+#     def run(self):
+#         pass
 
+#     @abstractmethod
+#     def turn(self):
+#         pass
 
+# class BMW(Player):
 
+#     def __init__(self, nom, rang, max_speed):
+#         self.name = nom
+#         self.color = rang
+#         self.max_speed = max_speed
 
+#     def run(self):
+#         print("Running")
 
+#     def turn(self):
+#         print("Turn around")
 
+# b = BMW("R8", "Qora", 260)
 
-
-
-
-
-
-
-
-
-
-
-
+# print(b.max_speed)
 
 
 
-
-
-
-
-
-
+"""
+Inkapsulatsiya
+"""
 # class BankAccount:
 #     def __init__(self, account_holder):
 #         self.account_holder = account_holder  
