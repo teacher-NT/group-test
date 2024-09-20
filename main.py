@@ -8,24 +8,32 @@ class Player(ABC):
     @abstractmethod
     def turn(self):
         pass
-
+    
+    @abstractmethod
+    def stop(self):
+        pass
+    
 class BMW(Player):
 
-    def __init__(self, nom, rang, max_speed):
+    def __init__(self, nom, rang, max_tezlik):
         self.name = nom
         self.color = rang
-        self.max_speed = max_speed
+        self.max_speed = max_tezlik
 
     def run(self):
         print("Running")
 
     def turn(self):
         print("Turn around")
+        
+    def stop(self):
+        print("Stop now")
 
-b = BMW("R8", "Qora", 260)
+b = BMW("R8", "black", 260)
 
 print(b.max_speed)
-
+print(b.name)
+print(b.color)
 
 
 
