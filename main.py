@@ -1,24 +1,27 @@
-class Animal:
-    def  __init__(self, n):
-        self.name = n
-    def eat(self, meal):
-        print(f"Men {meal} yemoqdaman!")
+class BankAccount:
+    def __init__(self, account_holder):
+        self.account_holder = account_holder  
+        self.__balance = 1000            
 
-class Dog(Animal):
-    def __init__(self, n, z, r, y):
-        self.zot = z
-        self.rang = r
-        self.yosh = y
-        super().__init__(n)
-    def eat(self, meal, drink):
-        print(f"{self.name} {meal} yeydi va {drink} ichadi!")
+    def get_balance(self):
+        return self.__balance
 
-class Cat(Animal):
-    pass
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"{amount} miqdorda depozit kiritildi. Joriy balans: {self.__balance}")
+        else:
+            print("Depozit miqdori noto'g'ri!")
 
-d1 = Dog("Tom", "Chihiahia", "sariq", 5)
-c1 = Cat("Baroq")
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            print(f"{amount} miqdorda pul yechildi. Joriy balans: {self.__balance}")
+        else:
+            print("Yechish uchun balans yetarli emas yoki miqdor noto'g'ri!")
 
-d1.eat("go'sht", "cola")
-print(d1.zot, d1.rang, d1.yosh)
-# c1.eat("baliq")
+
+my_account = BankAccount("Elon Musk")
+print(my_account.get_balance()) 
+my_account.deposit(-200)  
+my_account.withdraw(5000)  
