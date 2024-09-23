@@ -3,35 +3,6 @@ class Person:
         self.name = n
         self.age = a
 
-<<<<<<< HEAD
-class Car:
-    def __init__(self, name):
-        self.name = name
-    def move(self):
-        print("Yuryapman")
-
-class Boat:
-    def __init__(self, name):
-        self.name = name
-    def move(self):
-        print("Suzyapman")
-
-
-a = Plane("Samalyot")
-b = Car("Mashina")
-c = Boat("Qayiq")
-a.move()
-b.move()
-c.move()
-=======
-    def __lt__(self, obj):
-        return self.age < obj.age
-    
-    def __gt__(self, obj):
-        return self.age > obj.age
-    
->>>>>>> ce1c32dc5cddef4fb5baec90621882a0f53403ac
-
 class Employee(Person):
     def __init__(self, n, a, s, l):
         super().__init__(n, a)
