@@ -61,7 +61,6 @@ Abstraktsiya
 #     @abstractmethod
 #     def turn(self):
 #         pass
->>>>>>> a3a278b5417d6064b4c13b49ddbb5d77ce5dd9ee
     
 #     @abstractmethod
 #     def stop(self):
