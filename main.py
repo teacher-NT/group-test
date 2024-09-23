@@ -1,17 +1,45 @@
-"""
-Hackerrank - masala
-"""
-if __name__ == '__main__':
-    n = int(input().strip())
-    if n % 2 == 1:
-        print("Weird")
-    elif n % 2 == 0 and 2 <= n <= 5:
-        print("Not Weird")
-    elif n % 2 == 0 and 6 <= n <= 20:
-        print("Weird")
-    elif n > 20:
-        print("Not Weird")
-        
+class Plane:
+    def __init__(self, name):
+        self.name = name
+    def move(self):
+        print("Uchyapman")
+
+class Car:
+    def __init__(self, name):
+        self.name = name
+    def move(self):
+        print("Yurmoqdaman")
+
+class Boat:
+    def __init__(self, name):
+        self.name = name
+    def move(self):
+        print("Suzmoqdaman")
+
+
+a = Plane("Samalyot")
+b = Car("Mashina")
+c = Boat("Qayiq")
+
+a.move()
+b.move()
+c.move()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 """
