@@ -1,1 +1,1 @@
-print("Qalesiz Ibrohim")
+
