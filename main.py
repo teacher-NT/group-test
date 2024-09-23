@@ -16,6 +16,7 @@ class Boat:
     def move(self):
         print("Suzyapman")
 
+
 a = Plane("Samalyot")
 b = Car("Mashina")
 c = Boat("Qayiq")
