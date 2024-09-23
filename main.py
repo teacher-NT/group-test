@@ -89,6 +89,10 @@ Abstraktsiya
 # print(b.color)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 62b9a8e5a24104b9aea1ff1664798746f596af24
 # my_account = BankAccount("Elon Musk")
 # print(my_account.get_balance()) 
 # my_account.deposit(-200)  
