@@ -3,13 +3,6 @@ class Person:
         self.name = n
         self.age = a
 
-    def __lt__(self, obj):
-        return self.age < obj.age
-    
-    def __gt__(self, obj):
-        return self.age > obj.age
-    
-
 class Employee(Person):
     def __init__(self, n, a, s, l):
         super().__init__(n, a)
