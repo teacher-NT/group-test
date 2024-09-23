@@ -61,7 +61,6 @@ Abstraktsiya
 #     @abstractmethod
 #     def turn(self):
 #         pass
->>>>>>> a3a278b5417d6064b4c13b49ddbb5d77ce5dd9ee
     
 #     @abstractmethod
 #     def stop(self):
@@ -89,10 +88,8 @@ Abstraktsiya
 # print(b.name)
 # print(b.color)
 
->>>>>>> 928db268fd734e5d5b81b35eb1d0f20b222d2be2
 
-
-my_account = BankAccount("Elon Musk")
-print(my_account.get_balance()) 
-my_account.deposit(-200)  
-my_account.withdraw(5000)  
+# my_account = BankAccount("Elon Musk")
+# print(my_account.get_balance()) 
+# my_account.deposit(-200)  
+# my_account.withdraw(5000)  
