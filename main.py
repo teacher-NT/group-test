@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class BankAccount:
     def __init__(self, account_holder):
         self.account_holder = account_holder  
@@ -24,32 +25,97 @@ class BankAccount:
     @abstractmethod
     def turn(self):
         pass
+=======
+class Plane:
+    def __init__(self, name):
+        self.name = name
+    def move(self):
+        print("Uchyapman")
+
+class Car:
+    def __init__(self, name):
+        self.name = name
+    def move(self):
+        print("Yuryapman")
+
+class Boat:
+    def __init__(self, name):
+        self.name = name
+    def move(self):
+        print("Suzyapman")
+
+a = Plane("Samalyot")
+b = Car("Mashina")
+c = Boat("Qayiq")
+a.move()
+b.move()
+c.move()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+Abstraktsiya
+"""
+# from abc import ABC, abstractmethod
+
+# class Player(ABC):
+#     @abstractmethod
+#     def run(self):
+#         pass
+
+#     @abstractmethod
+#     def turn(self):
+#         pass
+>>>>>>> a3a278b5417d6064b4c13b49ddbb5d77ce5dd9ee
     
-    @abstractmethod
-    def stop(self):
-        pass
+#     @abstractmethod
+#     def stop(self):
+#         pass
     
-class BMW(Player):
+# class BMW(Player):
 
-    def __init__(self, nom, rang, max_tezlik):
-        self.name = nom
-        self.color = rang
-        self.max_speed = max_tezlik
+#     def __init__(self, nom, rang, max_tezlik):
+#         self.name = nom
+#         self.color = rang
+#         self.max_speed = max_tezlik
 
-    def run(self):
-        print("Running")
+#     def run(self):
+#         print("Running")
 
-    def turn(self):
-        print("Turn around")
+#     def turn(self):
+#         print("Turn around")
         
-    def stop(self):
-        print("Stop now")
+#     def stop(self):
+#         print("Stop now")
 
-b = BMW("R8", "black", 260)
+# b = BMW("R8", "black", 260)
 
-print(b.max_speed)
-print(b.name)
-print(b.color)
+# print(b.max_speed)
+# print(b.name)
+# print(b.color)
 
 >>>>>>> 928db268fd734e5d5b81b35eb1d0f20b222d2be2
 
