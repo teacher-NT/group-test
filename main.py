@@ -1,9 +1,9 @@
-class Plane:
-    def __init__(self, name):
-        self.name = name
-    def move(self):
-        print("Uchyapman")
+class Person:
+    def __init__(self, n, a):
+        self.name = n
+        self.age = a
 
+<<<<<<< HEAD
 class Car:
     def __init__(self, name):
         self.name = name
@@ -23,10 +23,36 @@ c = Boat("Qayiq")
 a.move()
 b.move()
 c.move()
+=======
+    def __lt__(self, obj):
+        return self.age < obj.age
+    
+    def __gt__(self, obj):
+        return self.age > obj.age
+    
+>>>>>>> ce1c32dc5cddef4fb5baec90621882a0f53403ac
 
+class Employee(Person):
+    def __init__(self, n, a, s, l):
+        super().__init__(n, a)
+        self.salary = s
+        self.lavozim = l
+    
+    def __lt__(self, obj):
+        return self.salary < obj.salary
+    
+    def __gt__(self, obj):
+        return self.salary > obj.salary
 
+    def __add__(self, n):
+        self.salary += n
 
+e1 = Employee("jon", 20, 1500, "Manager")
+e2 = Employee("Piter", 40, 500, "Adminstrator")
 
+e1 + 500
+print(e1 > e2)
+print(e1.salary)
 
 
 
@@ -88,8 +114,6 @@ Abstraktsiya
 # print(b.max_speed)
 # print(b.name)
 # print(b.color)
-
-
 
 # my_account = BankAccount("Elon Musk")
 # print(my_account.get_balance()) 
