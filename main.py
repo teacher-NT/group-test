@@ -1,32 +1,44 @@
 
+
 class Plane:
     def __init__(self, name):
         self.name = name
     def move(self):
         print("Uchyapman")
 
-class Car:
-    def __init__(self, name):
-        self.name = name
-    def move(self):
-        print("Yuryapman")
+class Person:
+    def __init__(self, n, a):
+        self.name = n
+        self.age = a
 
-class Boat:
-    def __init__(self, name):
-        self.name = name
-    def move(self):
-        print("Suzyapman")
+    def __lt__(self, obj):
+        return self.age < obj.age
+    
+    def __gt__(self, obj):
+        return self.age > obj.age
+    
 
-a = Plane("Samalyot")
-b = Car("Mashina")
-c = Boat("Qayiq")
-a.move()
-b.move()
-c.move()
+class Employee(Person):
+    def __init__(self, n, a, s, l):
+        super().__init__(n, a)
+        self.salary = s
+        self.lavozim = l
+    
+    def __lt__(self, obj):
+        return self.salary < obj.salary
+    
+    def __gt__(self, obj):
+        return self.salary > obj.salary
 
+    def __add__(self, n):
+        self.salary += n
 
+e1 = Employee("jon", 20, 1500, "Manager")
+e2 = Employee("Piter", 40, 500, "Adminstrator")
 
-
+e1 + 500
+print(e1 > e2)
+print(e1.salary)
 
 
 
