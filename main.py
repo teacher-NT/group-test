@@ -1,33 +1,42 @@
-class Person:
-    def __init__(self, n, a):
-        self.name = n
-        self.age = a
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QLabel,
+    QPushButton, QLineEdit, QTextEdit
+)
+from PyQt5.QtGui import QFont
+font = QFont("Arial", 14)
 
-class Employee(Person):
-    def __init__(self, n, a, s, l):
-        super().__init__(n, a)
-        self.salary = s
-        self.lavozim = l
-    
-    def __lt__(self, obj):
-        return self.salary < obj.salary
-    
-    def __gt__(self, obj):
-        return self.salary > obj.salary
+app = QApplication([])
 
-    def __add__(self, n):
-        self.salary += n
+win = QWidget()
+win.setGeometry(100, 100, 1200, 720)
+win.setWindowTitle("Mening birinchi Interfeys dasturim")
 
-e1 = Employee("jon", 20, 1500, "Manager")
-e2 = Employee("Piter", 40, 500, "Adminstrator")
+label = QLabel(win)
+label.setText("Salom hammaga")
+label.setFont(font)
+# label.setFixedSize(400, 50)
+# label.setStyleSheet("font-size: 40px; color: blue;")
 
-e1 + 500
-print(e1 > e2)
-print(e1.salary)
+# line = QLineEdit(win)
+# line.setGeometry(0, 100, 200, 50)
+# line.setFont(font)
+text = QTextEdit(win)
+text.setGeometry(0, 100, 400, 300 )
 
+def func():
+    t = text.toPlainText()
+    t = t.upper()
+    label.setText(f"Salom {t}")
 
+btn = QPushButton(win)
+btn.setText("Meni bos!")
+btn.setFont(font)
+btn.setGeometry(0, 400, 200, 50)
+btn.clicked.connect(func)
 
+win.show()
 
+app.exec_()
 
 
 
