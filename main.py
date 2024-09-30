@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel,
     QPushButton, QLineEdit, QTextEdit,
-    QHBoxLayout, QVBoxLayout
+    QHBoxLayout, QVBoxLayout,
+    QMessageBox
 )
 from PyQt5.QtGui import QFont
 font = QFont("Arial", 14)
@@ -21,7 +22,6 @@ class Window(QWidget):
 
         self.btn = QPushButton(self)
         self.btn.setText("Zoom")
-        # self.btn.move(50, 100)
         self.btn.clicked.connect(self.func)
 
         self.btn1 = QPushButton(self)
@@ -44,7 +44,11 @@ class Window(QWidget):
         self.setLayout(layout)
 
     def func(self):
-        self.setFixedSize(1200, 720)
+        msg = QMessageBox(self)
+        msg.setIcon(QMessageBox.Question)
+        msg.setText("Bu ogohlantirish xabari")  
+        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        msg.show()
 
 win = Window("OOP", 800, 600)
 win.show()
