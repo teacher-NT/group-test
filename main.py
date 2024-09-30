@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel,
     QPushButton, QLineEdit, QTextEdit,
     QHBoxLayout, QVBoxLayout,
-    QMessageBox, QComboBox
+    QMessageBox, QComboBox, QCheckBox
 )
 from PyQt5.QtGui import QFont
 font = QFont("Arial", 14)
@@ -29,6 +29,18 @@ class Window(QWidget):
         # self.menu.addItem("Lavash")
         # self.menu.addItem("HotDog")
 
+        self.checkList = QCheckBox(self)
+        self.checkList.setText("Qiyma")
+
+        self.checkList2 = QCheckBox(self)
+        self.checkList2.setText("Jaz")
+
+        self.checkList3 = QCheckBox(self)
+        self.checkList3.setText("Tovuq")
+        
+        layout.addWidget(self.checkList)
+        layout.addWidget(self.checkList2)
+        layout.addWidget(self.checkList3)
         layout.addWidget(self.label)
         layout.addWidget(self.menu)
         layout.addWidget(self.btn)
@@ -38,9 +50,11 @@ class Window(QWidget):
 
     def func(self):
         choice = self.menu.currentText()
+        tur = self.checkList.text()
+
         msg = QMessageBox(self)
         msg.setIcon(QMessageBox.Question)
-        msg.setText(f"Siz {choice} tanladingiz!")  
+        msg.setText(f"Siz {tur} {choice} tanladingiz!")  
         msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
         msg.show()
 
