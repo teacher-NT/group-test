@@ -7,34 +7,28 @@ font = QFont("Arial", 14)
 
 app = QApplication([])
 
-win = QWidget()
-win.setGeometry(100, 100, 1200, 720)
-win.setWindowTitle("Mening birinchi Interfeys dasturim")
+class Window(QWidget):
+    def __init__(self,title, width, height):
+        super().__init__()
+        self.setWindowTitle(title)
+        self.setFixedSize(width, height)
+        self.label = QLabel(self)
+        self.label.setText("Bu label")
+        self.label.setFont(font)
 
-label = QLabel(win)
-label.setText("Salom hammaga")
-label.setFont(font)
-# label.setFixedSize(400, 50)
-label.setStyleSheet("font-size: 40px; color: blue; border: 2px solid black")
+        self.btn = QPushButton(self)
+        self.btn.setText("Zoom")
+        self.btn.move(50, 100)
+        self.btn.clicked.connect(self.func)
 
-# line = QLineEdit(win)
-# line.setGeometry(0, 100, 200, 50)
-# line.setFont(font)
-text = QTextEdit(win)
-text.setGeometry(0, 100, 400, 300 )
+    def func(self):
+        self.setFixedSize(1200, 720)
 
-def func():
-    t = text.toPlainText()
-    t = t.upper()
-    label.setText(f"Salom {t}")
-
-btn = QPushButton(win)
-btn.setText("Meni bos!")
-btn.setFont(font)
-btn.setGeometry(0, 400, 200, 50)
-btn.clicked.connect(func)
-
+win = Window("OOP", 800, 600)
 win.show()
+
+
+
 
 app.exec_()
 
