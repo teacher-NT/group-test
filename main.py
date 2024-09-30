@@ -1,48 +1,63 @@
 
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QLabel,
+    QPushButton, QLineEdit, QTextEdit,
+    QHBoxLayout, QVBoxLayout,
+    QMessageBox
+)
+from PyQt5.QtGui import QFont
+font = QFont("Arial", 14)
 
-class Plane:
-    def __init__(self, name):
-        self.name = name
-    def move(self):
-        print("Uchyapman")
+app = QApplication([])
 
-class Person:
-    def __init__(self, n, a):
-        self.name = n
-        self.age = a
+class Window(QWidget):
+    def __init__(self,title, width, height):
+        super().__init__()
 
-    def __lt__(self, obj):
-        return self.age < obj.age
-    
-    def __gt__(self, obj):
-        return self.age > obj.age
-    
+        layout = QVBoxLayout()
+        self.setWindowTitle(title)
+        # self.setFixedSize(width, height)
+        self.label = QLabel(self)
+        self.label.setText("Bu label")
+        self.label.setFont(font)
 
-class Employee(Person):
-    def __init__(self, n, a, s, l):
-        super().__init__(n, a)
-        self.salary = s
-        self.lavozim = l
-    
-    def __lt__(self, obj):
-        return self.salary < obj.salary
-    
-    def __gt__(self, obj):
-        return self.salary > obj.salary
+        self.btn = QPushButton(self)
+        self.btn.setText("Zoom")
+        self.btn.clicked.connect(self.func)
 
-    def __add__(self, n):
-        self.salary += n
+        self.btn1 = QPushButton(self)
+        self.btn1.setText("Zoom")
+       
 
-e1 = Employee("jon", 20, 1500, "Manager")
-e2 = Employee("Piter", 40, 500, "Adminstrator")
+        self.btn2 = QPushButton(self)
+        self.btn2.setText("Zoom")
 
-e1 + 500
-print(e1 > e2)
-print(e1.salary)
+        self.btn3 = QPushButton(self)
+        self.btn3.setText("Zoom")
+       
+
+        layout.addWidget(self.label)
+        layout.addWidget(self.btn)
+        layout.addWidget(self.btn1)
+        layout.addWidget(self.btn2)
+        layout.addWidget(self.btn3)
+        
+        self.setLayout(layout)
+
+    def func(self):
+        msg = QMessageBox(self)
+        msg.setIcon(QMessageBox.Question)
+        msg.setText("Bu ogohlantirish xabari")  
+        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        msg.show()
+
+win = Window("OOP", 800, 600)
+win.show()
 
 
 
 
+app.exec_()
 
 
 
