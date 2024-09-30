@@ -16,9 +16,14 @@ class Window(QWidget):
         self.layout = QVBoxLayout()
         self.setWindowTitle(title)
         self.setFixedSize(width, height)
-        # self.show_checklist() 
-        # self.show_menu()
+        self.show_checklist() 
+        self.show_menu()
         self.show_radio()
+        self.setFixedHeight.setFixedWidth.setFixedSize
+        self.setFixedWidth
+        self.setFixedSize
+        self.lb()
+        self.func()
         self.setLayout(self.layout)
     
     def show_radio(self):
