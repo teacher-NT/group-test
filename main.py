@@ -15,7 +15,7 @@ label = QLabel(win)
 label.setText("Salom hammaga")
 label.setFont(font)
 # label.setFixedSize(400, 50)
-# label.setStyleSheet("font-size: 40px; color: blue;")
+label.setStyleSheet("font-size: 40px; color: blue; border: 2px solid black")
 
 # line = QLineEdit(win)
 # line.setGeometry(0, 100, 200, 50)
