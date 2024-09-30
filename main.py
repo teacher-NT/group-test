@@ -53,9 +53,6 @@ class Window(QWidget):
 win = Window("OOP", 800, 600)
 win.show()
 
-
-
-
 app.exec_()
 
 
