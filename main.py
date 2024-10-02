@@ -5,7 +5,7 @@ class BankAccount:
         self.__balance = 1000            
 =======
 from PyQt5.QtWidgets import (
-    QApplication, QWidget, QLabel,
+    QApplication, QWidget, QLabel, QMainWindow,
     QPushButton, QLineEdit, QTextEdit,
     QHBoxLayout, QVBoxLayout,
     QMessageBox, QComboBox, QCheckBox,  QRadioButton
@@ -49,7 +49,7 @@ class Window2(QWidget):
         self.btn = QPushButton("Exit", self, clicked=self.hide)
         self.show()
 
-class Window(QWidget):
+class Window(QMainWindow):
     def __init__(self, title, width, height):
         super().__init__()
 
