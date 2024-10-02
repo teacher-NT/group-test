@@ -14,7 +14,7 @@ class Window(QWidget):
         super().__init__()
 
         self.layout = QVBoxLayout()
-        self.setWindowTitle(title)
+        self.setWindowTitle(title)  
         self.setFixedSize(width, height)
         # self.show_checklist() 
         # self.show_menu()
@@ -77,7 +77,6 @@ win = Window("OOP", 800, 600)
 win.show()
 
 app.exec_()
-
 
 
 
