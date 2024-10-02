@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-class BankAccount:
-    def __init__(self, account_holder):
-        self.account_holder = account_holder  
-        self.__balance = 1000            
-=======
+
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QMainWindow,
     QPushButton, QLineEdit, QTextEdit,
@@ -12,32 +7,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QFont
 font = QFont("Arial", 14)
->>>>>>> 36ec3b8326ec79aab120c7ebcb4a1b6d6987a824
-
-    def get_balance(self):
-        return self.__balance
-
-<<<<<<< HEAD
-    def deposit(self, amount):
-        if amount > 0:
-            self.__balance += amount
-            print(f"{amount} miqdorda depozit kiritildi. Joriy balans: {self.__balance}")
-        else:
-            print("Depozit miqdori noto'g'ri!")
-
-    def withdraw(self, amount):
-        if 0 < amount <= self.__balance:
-            self.__balance -= amount
-            print(f"{amount} miqdorda pul yechildi. Joriy balans: {self.__balance}")
-        else:
-            print("Yechish uchun balans yetarli emas yoki miqdor noto'g'ri!")
-
-
-my_account = BankAccount("Elon Musk")
-print(my_account.get_balance()) 
-my_account.deposit(-200)  
-my_account.withdraw(5000)  
-=======
+app = QApplication([])
 class Window2(QWidget):
     def  __init__(self, name, num):
         super().__init__()
@@ -70,71 +40,4 @@ class Window(QMainWindow):
 win = Window("OOP", 800, 600)
 win.show()
 
-
-
-
 app.exec_()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-Abstraktsiya
-"""
-# from abc import ABC, abstractmethod
-
-# class Player(ABC):
-#     @abstractmethod
-#     def run(self):
-#         pass
-
-#     @abstractmethod
-#     def turn(self):
-#         pass
-    
-#     @abstractmethod
-#     def stop(self):
-#         pass
-    
-# class BMW(Player):
-
-#     def __init__(self, nom, rang, max_tezlik):
-#         self.name = nom
-#         self.color = rang
-#         self.max_speed = max_tezlik
-
-#     def run(self):
-#         print("Running")
-
-#     def turn(self):
-#         print("Turn around")
-        
-#     def stop(self):
-#         print("Stop now")
-
-# b = BMW("R8", "black", 260)
-
-# print(b.max_speed)
-# print(b.name)
-# print(b.color)
-
-# my_account = BankAccount("Elon Musk")
-# print(my_account.get_balance()) 
-# my_account.deposit(-200)  
-# my_account.withdraw(5000)  
->>>>>>> 36ec3b8326ec79aab120c7ebcb4a1b6d6987a824
