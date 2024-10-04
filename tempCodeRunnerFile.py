@@ -1,53 +1,28 @@
-from PyQt5.QtWidgets import (
-    QApplication, QWidget, QLabel,
-    QPushButton, QLineEdit, QTextEdit,
-    QHBoxLayout, QVBoxLayout,
-    QMessageBox, QComboBox
-)
-from PyQt5.QtGui import QFont
-font = QFont("Arial", 14)
+# import json
 
-app = QApplication([])
+# import requests as rq
+# API_KEY = "61f0041981ac4b8eb0e45938240308"
+# data = rq.get(f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q=toshkent")
+# data = data.text
+# data = json.loads(data)
 
-class Window(QWidget):
-    def __init__(self,title, width, height):
-        super().__init__()
+# print(data['current']['temp_c'])
 
-        layout = QVBoxLayout()
-        self.setWindowTitle(title)
-        self.setFixedSize(width, height)
-        self.label = QLabel(self)
-        self.label.setText("Menyu:")
-        self.label.setFont(font)
+from pytubefix import YouTube
 
-        self.btn = QPushButton(self)
-        self.btn.setText("Zoom")
-        self.btn.clicked.connect(self.func)
-       
-        self.menu = QComboBox(self)
-        self.menu.addItems(["Lavash", "HotDog", "Pizza", "Sho'rva", "Free", "Osh", "Shashlik"])
-        # self.menu.addItem("Lavash")
-        # self.menu.addItem("HotDog")
+# YouTube video URL
+url = "https://youtu.be/d_S6HyolN_w?si=YtmFdOzpqumLssG0"
 
-        layout.addWidget(self.label)
-        layout.addWidget(self.menu)
-        layout.addWidget(self.btn)
-        
-        
-        self.setLayout(layout)
+# Video obyekti yarating
+yt = YouTube(url)
 
-    def func(self):
-        choice = self.menu.currentText()
-        msg = QMessageBox(self)
-        msg.setIcon(QMessageBox.Question)
-        msg.setText(f"Siz {choice} tanladingiz!")  
-        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-        msg.show()
+# Video haqida ma'lumot chop etish
+print(f"Title: {yt.title}")
+print(f"Views: {yt.views}")
+print(f"Length: {yt.length} seconds")
 
-win = Window("OOP", 800, 600)
-win.show()
+# Yuklab olish
+video = yt.streams.get_highest_resolution()
+video.download()
 
-
-
-
-app.exec_()
+print("Video muvaffaqiyatli yuklandi!")
