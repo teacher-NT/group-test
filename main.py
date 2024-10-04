@@ -28,7 +28,6 @@ class Game(QWidget):
         self.main_layout.addLayout(self.control_layout)
         self.setLayout(self.main_layout)
         self.show()
-        self.check_game()
 
     def buttons(self):
         self.btn_list = []
@@ -248,16 +247,16 @@ class Game(QWidget):
             elif self.btn_list[14].text() == "":
                 self.btn_list[15].setText(self.btn_list[14].text())
                 self.btn_list[14].setText(text)
+        
+        self.check_game()
 
     def check_game(self):
         n = 0
         for i in range(1, 16):
             if self.btn_list[i-1].text() == str(i):
-                print(i, n)
                 n += 1
-        print(n)
+        
         if n == 15:
-            print("Ishladi")
             self.message = QMessageBox()
             self.message.setText("Tabriklaymiz! Siz yutdingiz.")
             self.message.setStandardButtons(QMessageBox.Ok)
