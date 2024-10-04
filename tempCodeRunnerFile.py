@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+        self.setWindowTitle(title)  
+=======
 # import json
 
 # import requests as rq
@@ -26,3 +30,4 @@ video = yt.streams.get_highest_resolution()
 video.download()
 
 print("Video muvaffaqiyatli yuklandi!")
+>>>>>>> ca8ac2adf59d6a4eb0d4e878c0c69104fd6ebd7d

@@ -21,8 +21,81 @@ class Game(QWidget):
         self.buttuns_layout = QGridLayout()
         self.control_layout = QHBoxLayout()
 
+<<<<<<< HEAD
+        self.layout = QVBoxLayout()
+        self.setWindowTitle(title)  
+        self.setFixedSize(width, height)
+        self.oynalar = []
+        self.count = 0
+        self.btn = QPushButton("New", self,  clicked=self.new)
+        # self.btn.setText("New")
+        # self.btn.clicked.connect
+        self.setLayout(self.layout)
+    def new(self):
+        self.count +=  1
+        win = Window2("Yangi oyna", self.count)
+        self.oynalar.append(win)
+    
+win = Window("OOP", 800, 600)
+win.show()
+
+app.exec_()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 36ec3b8326ec79aab120c7ebcb4a1b6d6987a8
+"""
+Abstraktsiya
+"""
+# from abc import ABC, abstractmethod
+
+# class Player(ABC):
+#     @abstractmethod
+#     def run(self):
+#         pass
+
+#     @abstractmethod
+#     def turn(self):
+#         pass
+    
+#     @abstractmethod
+#     def stop(self):
+#         pass
+    
+# class BMW(Player):
+
+#     def __init__(self, nom, rang, max_tezlik):
+#         self.name = nom
+#         self.color = rang
+#         self.max_speed = max_tezlik
+
+#     def run(self):
+#         print("Running")
+
+#     def turn(self):
+#         print("Turn around")
+=======
         self.buttons()
         self.control()
+>>>>>>> ca8ac2adf59d6a4eb0d4e878c0c69104fd6ebd7d
         
         self.main_layout.addLayout(self.buttuns_layout)
         self.main_layout.addLayout(self.control_layout)
