@@ -1,33 +1,168 @@
-<<<<<<< HEAD
+                self.btn_list[2].setText(self.btn_list[1].text())
+                self.btn_list[1].setText(text)
+            elif self.btn_list[3].text() == "":
+                self.btn_list[2].setText(self.btn_list[3].text())
+                self.btn_list[3].setText(text)
+            elif self.btn_list[6].text() == "":
+                self.btn_list[2].setText(self.btn_list[6].text())
+                self.btn_list[6].setText(text)
+        elif text and btn == self.btn_list[3]:
+            if self.btn_list[2].text() == "":
+                self.btn_list[3].setText(self.btn_list[2].text())
+                self.btn_list[2].setText(text)
+            elif self.btn_list[7].text() == "":
+                self.btn_list[3].setText(self.btn_list[7].text())
+                self.btn_list[7].setText(text)
+        
+        elif text and btn == self.btn_list[4]:
+            if self.btn_list[0].text() == "":
+                self.btn_list[4].setText(self.btn_list[0].text())
+                self.btn_list[0].setText(text)
+            elif self.btn_list[5].text() == "":
+                self.btn_list[4].setText(self.btn_list[5].text())
+                self.btn_list[5].setText(text)
+            elif self.btn_list[8].text() == "":
+                self.btn_list[4].setText(self.btn_list[8].text())
+                self.btn_list[8].setText(text)
+        
+        elif text and btn == self.btn_list[5]:
+            if self.btn_list[1].text() == "":
+                self.btn_list[5].setText(self.btn_list[1].text())
+                self.btn_list[1].setText(text)
+            elif self.btn_list[4].text() == "":
+                self.btn_list[5].setText(self.btn_list[4].text())
+                self.btn_list[4].setText(text)
+            elif self.btn_list[6].text() == "":
+                self.btn_list[5].setText(self.btn_list[6].text())
+                self.btn_list[6].setText(text)
+            elif self.btn_list[9].text() == "":
+                self.btn_list[5].setText(self.btn_list[9].text())
+                self.btn_list[9].setText(text)
 
-        self.setWindowTitle(title)  
-=======
-# import json
+        elif text and btn == self.btn_list[6]:
+            if self.btn_list[2].text() == "":
+                self.btn_list[6].setText(self.btn_list[2].text())
+                self.btn_list[2].setText(text)
+            elif self.btn_list[5].text() == "":
+                self.btn_list[6].setText(self.btn_list[5].text())
+                self.btn_list[5].setText(text)
+            elif self.btn_list[7].text() == "":
+                self.btn_list[6].setText(self.btn_list[7].text())
+                self.btn_list[7].setText(text)
+            elif self.btn_list[10].text() == "":
+                self.btn_list[6].setText(self.btn_list[10].text())
+                self.btn_list[10].setText(text)
+        
+        elif text and btn == self.btn_list[7]:
+            if self.btn_list[3].text() == "":
+                self.btn_list[7].setText(self.btn_list[3].text())
+                self.btn_list[3].setText(text)
+            elif self.btn_list[6].text() == "":
+                self.btn_list[7].setText(self.btn_list[6].text())
+                self.btn_list[6].setText(text)
+            elif self.btn_list[11].text() == "":
+                self.btn_list[7].setText(self.btn_list[11].text())
+                self.btn_list[11].setText(text)
 
-# import requests as rq
-# API_KEY = "61f0041981ac4b8eb0e45938240308"
-# data = rq.get(f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q=toshkent")
-# data = data.text
-# data = json.loads(data)
+        # Diyorbekning varianti
+        elif text and btn == self.btn_list[8]:
+            if self.btn_list[4].text() == "":
+                self.btn_list[8].setText(self.btn_list[4].text())
+                self.btn_list[4].setText(text)
+            elif self.btn_list[9].text() == "":
+                self.btn_list[8].setText(self.btn_list[9].text())
+                self.btn_list[9].setText(text)
+            elif self.btn_list[12].text() == "":
+                self.btn_list[8].setText(self.btn_list[12].text())
+                self.btn_list[12].setText(text)
+        elif text and btn == self.btn_list[9]:
+            if self.btn_list[5].text() == "":
+                self.btn_list[9].setText(self.btn_list[5].text())
+                self.btn_list[5].setText(text)
+            elif self.btn_list[8].text() == "":
+                self.btn_list[9].setText(self.btn_list[8].text())
+                self.btn_list[8].setText(text)
+            elif self.btn_list[10].text() == "":
+                self.btn_list[9].setText(self.btn_list[10].text())
+                self.btn_list[10].setText(text)
+            elif self.btn_list[13].text() == "":
+                self.btn_list[9].setText(self.btn_list[13].text())
+                self.btn_list[13].setText(text)
 
-# print(data['current']['temp_c'])
+        elif text and btn == self.btn_list[10]:
+            if self.btn_list[6].text() == "":
+                self.btn_list[10].setText(self.btn_list[6].text())
+                self.btn_list[6].setText(text)
+            elif self.btn_list[9].text() == "":
+                self.btn_list[10].setText(self.btn_list[9].text())
+                self.btn_list[9].setText(text)
+            elif self.btn_list[11].text() == "":
+                self.btn_list[10].setText(self.btn_list[11].text())
+                self.btn_list[11].setText(text)
+            elif self.btn_list[14].text() == "":
+                self.btn_list[10].setText(self.btn_list[14].text())
+                self.btn_list[14].setText(text)
+        elif text and btn == self.btn_list[11]:
+            if self.btn_list[7].text() == "":
+                self.btn_list[11].setText(self.btn_list[7].text())
+                self.btn_list[7].setText(text)
+            elif self.btn_list[10].text() == "":
+                self.btn_list[11].setText(self.btn_list[10].text())
+                self.btn_list[10].setText(text)
+            elif self.btn_list[15].text() == "":
+                self.btn_list[11].setText(self.btn_list[15].text())
+                self.btn_list[15].setText(text)
+        
+        elif text and btn == self.btn_list[12]:
+            if self.btn_list[8].text() == "":
+                self.btn_list[12].setText(self.btn_list[8].text())
+                self.btn_list[8].setText(text)
+            elif self.btn_list[13].text() == "":
+                self.btn_list[12].setText(self.btn_list[13].text())
+                self.btn_list[13].setText(text)
+        
+        elif text and btn == self.btn_list[13]:
+            if self.btn_list[9].text() == "":
+                self.btn_list[13].setText(self.btn_list[9].text())
+                self.btn_list[9].setText(text)
+            elif self.btn_list[12].text() == "":
+                self.btn_list[13].setText(self.btn_list[12].text())
+                self.btn_list[12].setText(text)
+            elif self.btn_list[14].text() == "":
+                self.btn_list[13].setText(self.btn_list[14].text())
+                self.btn_list[14].setText(text)
 
-from pytubefix import YouTube
+        elif text and btn == self.btn_list[14]:
+            if self.btn_list[10].text() == "":
+                self.btn_list[14].setText(self.btn_list[10].text())
+                self.btn_list[10].setText(text)
+            elif self.btn_list[13].text() == "":
+                self.btn_list[14].setText(self.btn_list[13].text())
+                self.btn_list[13].setText(text)
+            elif self.btn_list[15].text() == "":
+                self.btn_list[14].setText(self.btn_list[15].text())
+                self.btn_list[15].setText(text)
+        
+        elif text and btn == self.btn_list[15]:
+            if self.btn_list[11].text() == "":
+                self.btn_list[15].setText(self.btn_list[11].text())
+                self.btn_list[11].setText(text)
+            elif self.btn_list[14].text() == "":
+                self.btn_list[15].setText(self.btn_list[14].text())
+                self.btn_list[14].setText(text)
+        self.check_game()
 
-# YouTube video URL
-url = "https://youtu.be/d_S6HyolN_w?si=YtmFdOzpqumLssG0"
+    def check_game(self):
+        n = 0
+        for i in range(1, 16):
+            if self.btn_list[i-1].text() == str(i):
+                n += 1
+        if n == 15:
+            self.message = QMessageBox()
+            self.message.setText("Tabriklaymiz! Siz yutdingiz.")
+            self.message.setStandardButtons(QMessageBox.Ok)
+            self.message.exec_()
 
-# Video obyekti yarating
-yt = YouTube(url)
+win = Game()
 
-# Video haqida ma'lumot chop etish
-print(f"Title: {yt.title}")
-print(f"Views: {yt.views}")
-print(f"Length: {yt.length} seconds")
-
-# Yuklab olish
-video = yt.streams.get_highest_resolution()
-video.download()
-
-print("Video muvaffaqiyatli yuklandi!")
->>>>>>> ca8ac2adf59d6a4eb0d4e878c0c69104fd6ebd7d
+app.exec_()
