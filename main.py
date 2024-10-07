@@ -2,10 +2,12 @@ from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QMainWindow,
     QPushButton, QLineEdit, QTextEdit,
     QHBoxLayout, QVBoxLayout, QGridLayout,
-    QMessageBox, QComboBox, QCheckBox,  QRadioButton
+    QMessageBox, QComboBox, QCheckBox,  QRadioButton,
 )
+
 from PyQt5.QtGui import QFont
 from random import shuffle
+from PyQt5.QtCore import QTimer,QTime
 
 
 font = QFont("Arial", 14)
@@ -15,11 +17,24 @@ class Game(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Raqamlar o'yini")
-        self.setStyleSheet("background: gray;")
+        self.setStyleSheet("background: aquamarine;")
 
         self.main_layout = QVBoxLayout()
         self.buttuns_layout = QGridLayout()
         self.control_layout = QHBoxLayout()
+        
+        self.timer_label = QLabel("Qolgan vaqt: 05:00")
+        self.timer_label.setFont(font)
+        self.main_layout.addWidget(self.timer_label)
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_timer)
+        self.time_remaining = QTime(0, 5, 0)  # 5 minutes countdown
+
+        self.main_layout.addLayout(self.buttuns_layout)
+        self.main_layout.addLayout(self.control_layout)
+        self.setLayout(self.main_layout)
+        self.show()
+        self.check_game()
 
         self.buttons()
         self.control()
@@ -39,7 +54,7 @@ class Game(QWidget):
                 btn = QPushButton(str(number[index]), clicked=self.game_control)
                 btn.setFixedSize(70, 70)
                 btn.setFont(font)
-                btn.setStyleSheet("background: #a1d6d5")
+                btn.setStyleSheet("background: ivory")
                 btn.setEnabled(False)
                 self.btn_list.append(btn)
                 self.buttuns_layout.addWidget(btn, q, u)
@@ -253,15 +268,21 @@ class Game(QWidget):
         n = 0
         for i in range(1, 16):
             if self.btn_list[i-1].text() == str(i):
-                print(i, n)
                 n += 1
-        print(n)
         if n == 15:
             print("Ishladi")
             self.message = QMessageBox()
             self.message.setText("Tabriklaymiz! Siz yutdingiz.")
             self.message.setStandardButtons(QMessageBox.Ok)
             self.message.exec_()
+    
+    def update_timer(self):
+        self.time_remaining = self.time_remaining.addSecs(-1)
+        self.timer_label.setText(f"Qolgan vaqt: {self.time_remaining.toString('mm:ss')}")
+        if self.time_remaining == QTime(0, 0, 0):
+            self.timer.stop()
+            self.finish_game()
+            QMessageBox.warning(self, "Vaqt tugadi", "Vaqt tugadi! Siz o'yinni tugata olmadingiz.")
 
 win = Game()
 
