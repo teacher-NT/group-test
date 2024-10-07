@@ -58,30 +58,30 @@ class CurrencyConverter(QWidget):
 
     def calculate(self):
         
-        currency = self.currency_menu.currentData()
-        son_text = self.amount_input.text()
+        selected_currency = self.currency_menu.currentData()
+        amount_text = self.amount_input.text()
 
        
         try:
-            amount = float(son_text)
+            amount = float(amount_text)
         except ValueError:
             QMessageBox.warning(self, "Xato", "Iltimos, to'g'ri miqdor kiriting!")
             return
 
         
-        price = float(currency['price'])  # Markaziy bank kursi
-        buy_price = currency['buy_price']
-        nbu_sell_price = currency['nbu_cell_price']
+        cb_price = float(selected_currency['cb_price'])  # Markaziy bank kursi
+        nbu_buy_price = selected_currency['nbu_buy_price']
+        nbu_sell_price = selected_currency['nbu_cell_price']
 
         
-        som_amount_cb = amount * price
+        som_amount_cb = amount * cb_price
         result_text = f"Markaziy bank kursi bo'yicha: {som_amount_cb:.2f} so'm\n"
 
-        if buy_price and nbu_sell_price:
-            som_buy = amount * float(buy_price)
-            som_sell = amount * float(nbu_sell_price)
-            result_text += f"Mablag' sotib olish kursi bo'yicha: {som_buy:.2f} so'm\n"
-            result_text += f"Mablag' sotish kursi bo'yicha: {som_sell:.2f} so'm"
+        if nbu_buy_price and nbu_sell_price:
+            som_amount_nbu_buy = amount * float(nbu_buy_price)
+            som_amount_nbu_sell = amount * float(nbu_sell_price)
+            result_text += f"Mablag' sotib olish kursi bo'yicha: {som_amount_nbu_buy:.2f} so'm\n"
+            result_text += f"Mablag' sotish kursi bo'yicha: {som_amount_nbu_sell:.2f} so'm"
 
         self.result_label.setText(result_text)
 
