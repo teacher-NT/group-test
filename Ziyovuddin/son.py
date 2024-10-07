@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import (
-    QApplication, QWidget, QLabel, QMainWindow,
-    QPushButton, QLineEdit, QTextEdit,
+    QApplication, QWidget,
+    QPushButton, 
     QHBoxLayout, QVBoxLayout, QGridLayout,
-    QMessageBox, QComboBox, QCheckBox,  QRadioButton
+    QMessageBox, 
 )
 from PyQt5.QtGui import QFont
 from random import shuffle
