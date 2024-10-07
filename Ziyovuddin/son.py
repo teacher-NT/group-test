@@ -1,53 +1,44 @@
-import time
-from PyQt5.QtWidgets import *
-from PyQt5 import QtCore, QtGui
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QLabel, QMainWindow,
+    QPushButton, QLineEdit, QTextEdit,
+    QHBoxLayout, QVBoxLayout, QGridLayout,
+    QMessageBox, QComboBox, QCheckBox,  QRadioButton
+)
+from PyQt5.QtGui import QFont
 from random import shuffle
-import pygame
-font = QFont("Arial", 14)
+
+
+font = QFont("Arial Black", 14)
 app = QApplication([])
 
-pygame.mixer.init()
-pygame.mixer.music.load('papyrus.ogg')
-pygame.mixer.music.play(5+5)
 class Game(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Raqamlar o'yini")
-        self.setStyleSheet("background: #E55A5A;")
+        self.setStyleSheet("background: goldenrod;")
 
         self.main_layout = QVBoxLayout()
         self.buttuns_layout = QGridLayout()
         self.control_layout = QHBoxLayout()
 
-        self.timer_label = QLabel("Time left: 5:00")
-        self.timer_label.setFont(font)
-        self.timer_label.setAlignment(Qt.AlignCenter)
-        self.main_layout.addWidget(self.timer_label)
-
         self.buttons()
         self.control()
-
+        
         self.main_layout.addLayout(self.buttuns_layout)
         self.main_layout.addLayout(self.control_layout)
         self.setLayout(self.main_layout)
-
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_timer)
-        self.time_left = 1  
         self.show()
 
     def buttons(self):
         self.btn_list = []
         index = 0
-        number = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, '')
+        number = (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,'')
         for q in range(1, 5):
             for u in range(1, 5):
                 btn = QPushButton(str(number[index]), clicked=self.game_control)
                 btn.setFixedSize(70, 70)
                 btn.setFont(font)
-                btn.setStyleSheet("background: #33EB2C")
+                btn.setStyleSheet("background: tan")
                 btn.setEnabled(False)
                 self.btn_list.append(btn)
                 self.buttuns_layout.addWidget(btn, q, u)
@@ -55,27 +46,18 @@ class Game(QWidget):
 
     def control(self):
         self.START = QPushButton("START", clicked=self.start_game)
-        self.EXIT = QPushButton("EXIT", clicked=self.ee)
+        self.START.setStyleSheet("color: red; background: white;")
+        self.EXIT = QPushButton("EXIT", clicked=exit)
+        self.EXIT.setStyleSheet("color: red; background: white;")
         self.FINISH = QPushButton("FINISH", clicked=self.finish_game)
+        self.FINISH.setStyleSheet("color: red; background: white;")
         self.FINISH.hide()
         self.control_layout.addWidget(self.START)
         self.control_layout.addWidget(self.EXIT)
         self.control_layout.addWidget(self.FINISH)
-    def ee(self):
-        self.setStyleSheet("background: #322424;")
-        pygame.mixer.init()
-        pygame.mixer.music.load('gameover.ogg')
-        pygame.mixer.music.play()
-        time.sleep(1.5)
-        quit()
+    
     def start_game(self):
-        pygame.mixer.init()
-        pygame.mixer.music.play()
-        time.sleep(2)
-        pygame.mixer.init()
-        pygame.mixer.music.load('prebattle1.ogg')
-        pygame.mixer.music.play()
-        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, '']
+        numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,'']
         shuffle(numbers)
         for i in range(len(numbers)):
             self.btn_list[i].setText(str(numbers[i]))
@@ -83,46 +65,15 @@ class Game(QWidget):
         self.START.hide()
         self.EXIT.hide()
         self.FINISH.show()
-        self.time_left = 300  
-        self.timer.start(1000) 
-
+    
     def finish_game(self):
-        pygame.mixer.init()
-        pygame.mixer.music.load('golos-knopka.mp3')
-        pygame.mixer.music.play()
-        time.sleep(2)
-        pygame.mixer.init()
-        pygame.mixer.music.load('papyrus.ogg')
-        pygame.mixer.music.play()
-        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, '']
+        numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,'']
         for i in range(len(numbers)):
             self.btn_list[i].setText(str(numbers[i]))
             self.btn_list[i].setEnabled(False)
-        
         self.START.show()
         self.EXIT.show()
         self.FINISH.hide()
-        self.timer.stop()
-        msg_box = QMessageBox()
-        msg_box.setWindowTitle("O'yin tugadi")
-        msg_box.setText("O'yin tugadi! Siz yutqazdingiz.")
-        msg_box.setIcon(QMessageBox.Information)
-        msg_box.setStandardButtons(QMessageBox.Ok)
-        msg_box.exec_()
-    def update_timer(self):
-        if self.time_left > 0:
-            self.time_left -= 1
-            minutes = self.time_left // 60
-            seconds = self.time_left % 60
-            self.timer_label.setText(f"Time left: {minutes:02}:{seconds:02}")
-        else:
-            self.timer.stop()
-            self.timer_label.setText("Vaqt tugadi! Siz yutqazdingiz!")
-            self.finish_game()
-        if all(btn.text() == str(i + 1) for i, btn in enumerate(self.btn_list[:-1])) and self.btn_list[-1].text() == '':
-            self.timer.stop()
-            self.timer_label.setText("Tabriklaymiz! Siz g'alaba qozondingiz!")
-            self.finish_game()
 
     def game_control(self):
         btn = self.sender()
@@ -213,7 +164,6 @@ class Game(QWidget):
                 self.btn_list[7].setText(self.btn_list[11].text())
                 self.btn_list[11].setText(text)
 
-        # Diyorbekning varianti
         elif text and btn == self.btn_list[8]:
             if self.btn_list[4].text() == "":
                 self.btn_list[8].setText(self.btn_list[4].text())
@@ -299,7 +249,23 @@ class Game(QWidget):
             elif self.btn_list[14].text() == "":
                 self.btn_list[15].setText(self.btn_list[14].text())
                 self.btn_list[14].setText(text)
+        self.check_game()
 
-if __name__ == "__main__":
-    window = Game()
-    app.exec_()
+
+    def check_game(self):
+        n = 0
+        for i in range(1, 16):
+            if self.btn_list[i-1].text() == str(i):
+                print(i, n)
+                n += 1
+        print(n)
+        if n == 15:
+            print("Ishladi")
+            self.message = QMessageBox()
+            self.message.setText("😊Tabriklaymiz! Siz yutdingiz😊.")
+            self.message.setStandardButtons(QMessageBox.Ok)
+            self.message.exec_()
+
+win = Game()
+
+app.exec_()
